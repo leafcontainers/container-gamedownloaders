@@ -1,0 +1,15 @@
+version: '3'
+volumes:
+  game_downloads:
+    driver: local
+services:
+  gamedownloader:
+    build:
+      context: .
+      dockerfile: Containerfile
+    tty: true
+    stdio: true
+    restart: no
+    volume:
+      - '/etc/localtime:/etc/localtime:ro'
+      - 'game_downloads:/mnt:rw'
