@@ -3,7 +3,7 @@ set -x
 source gamedownloaders.cfg
 docker compose -f compose.yaml build
 docker compose -f compose.yaml up -d
-docker compose -f compose.yaml logs -f
+#docker compose -f compose.yaml logs -f
 if [ "$lgogdownloader" == 'y' ]
 then
   docker exec -i -t gamedownloader lgogdownloader --login
