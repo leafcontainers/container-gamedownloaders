@@ -4,7 +4,7 @@ VOLUME /mnt
 # get pkgs
 RUN dnf update -y
 RUN dnf install -y lgogdownloader pipx bash
-RUN pipx install itchiodl
+RUN pipx install itchiodl && pipx install humblebundle-downloader
 
 # clean up
 RUN dnf clean all -y && rm -fr /var/cache/* /tmp/* /var/tmp/* /root/.cache/*
